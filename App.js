@@ -9,14 +9,13 @@ export class App extends Component{
         const header = new Header;
         const headerDOM = header.renderDOM();
         dom.prepend(headerDOM);
-        debugger
+        
         let pokemon = { props: [] };
         const pokeList = new PokeList(pokemon);
         const pokeListDOM = pokeList.renderDOM();
         dom.append(pokeListDOM);
         const rawPokeJsonResponse = await goGetPokemonGo();
 
-        debugger
         const resultantPokemonArray = rawPokeJsonResponse.results;
         pokeList.update({ props : resultantPokemonArray });
 
