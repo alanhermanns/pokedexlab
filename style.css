@@ -46,8 +46,14 @@
                 border-radius: 7px;
                 box-shadow: 50px 100px 100px darkgrey;
             }
+            .info{
+                visibility: none;
+            }
+            .info:hover{
+                visibility: visible;
+            }
             img:hover {
-               display: none;
+                opacity: 0;
             
             }
             h5 {
@@ -111,10 +117,20 @@
         border-radius: 7px;
         box-shadow: 50px 100px 100px darkgrey;
     }
-    section.image:hover {
-       display: none;
+    img:hover {
+       opacity: 0;
     
     }
+    /* .info{
+        opacity: 0;
+        height: 200px;
+        width: 200px;
+    }
+    .info:hover{
+        height: 200px;
+        width: 200px;
+        opacity: 10;
+    } */
     h5 {
         position: absolute;
     }
