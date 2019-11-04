@@ -24,7 +24,22 @@ export class App extends Component{
         const resultantPokemonArray = rawPokeJsonResponse.results;
         pokeList.update({ props : resultantPokemonArray });
 
+        async function updateSearchAndLoad() {
+            const imageList = document.getElementsByClassName('image-list');
+            document.body.children.removeChild(imageList);
+            let pokemon = { props: [] };
+            const pokeList = new PokeList(pokemon);
+            const pokeListDOM = pokeList.renderDOM();
+            dom.append(pokeListDOM);
+            const rawPokeJsonResponse = await goGetPokemonGo();
+            const resultantPokemonArray = rawPokeJsonResponse.results;
+            pokeList.update({ props : resultantPokemonArray });
+        }
+
+        window.addEventListener('hashchange', async() => { await updateSearchAndLoad(); });
+
     }
+
     renderHTML(){
         return /*html*/ `
         <div>
