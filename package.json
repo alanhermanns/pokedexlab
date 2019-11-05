@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/alanhermanns/pokedexlab/issues"
   },
-  "homepage": "https://github.com/alanhermanns/pokedexlab#readme"
+  "homepage": "https://github.com/alanhermanns/pokedexlab#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
