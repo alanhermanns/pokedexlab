@@ -30,7 +30,6 @@ export class Search extends Component {
 
         form.addEventListener('submit', (event) => {
             event.preventDefault();
-            console.log('form submitted');
             const formData = new FormData(form);
             let queryString = window.location.hash.slice(1);
             let searchParams = new URLSearchParams(queryString);
