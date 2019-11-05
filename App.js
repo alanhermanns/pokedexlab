@@ -25,7 +25,7 @@ export class App extends Component{
         pokeList.update({ props : resultantPokemonArray });
 
         async function updateSearchAndLoad() {
-            const imageList = document.getElementsByClassName('image-list');
+            //const imageList = document.getElementsByClassName('image-list');
             document.body.children[0].lastChild.remove();
             let pokemon = { props: [] };
             const pokeList = new PokeList(pokemon);
