@@ -1,8 +1,9 @@
-import Component from '../component.js';
+import Component from './component.js';
 import { goGetPokemonGo } from './service/pokeapi.js';
 import { Header } from './index/header.js';
 import { PokeList } from './index/pokeList.js';
 import { Search } from './index/search.js';
+import { Paging } from './index/paging.js';
 
 export class App extends Component{
     async onRender(dom) {
@@ -14,6 +15,10 @@ export class App extends Component{
         const options = new Search;
         const optionsDom = options.renderDOM();
         dom.append(optionsDom);
+
+        const pages = new Paging;
+        const pagesDom = pages.renderDOM();
+        dom.append(pagesDom);
 
         let pokemon = { props: [] };
         const pokeList = new PokeList(pokemon);
