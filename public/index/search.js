@@ -5,13 +5,14 @@ export class Search extends Component {
     onRender(form){
         // const searchBar = document.querySelectorAll('input[name = search-bar]');
         // const radios = document.querySelectorAll('input[name = sort]')
-        //const radioButtons = document.querySelectorAll('input[name = radio]');
+        const radioButtons = document.querySelectorAll('input[name = radio]');
         const searchBarInput = document.querySelectorAll('input[name = searchbar]');
         
         const updateControls = () => {
             let queryString = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryString);
             searchBarInput.value = searchParams.get('pokemon') || '';
+            radioButtons['checked'] = searchParams.get('sort') || '';
             //let sortBy = searchParams.get('sort'); //this will be where the radio buttons update
             // if (sortBy) {
             //     radioButtons.forEach((radioButton) => {

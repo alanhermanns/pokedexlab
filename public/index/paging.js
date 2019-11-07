@@ -14,7 +14,7 @@ export class Paging extends Component {
             if (currentPageNumber){
                 searchParams.set('page', parseInt(currentPageNumber) + 1);
             } else {
-                searchParams.set('page', 1);
+                searchParams.set('page', 2);
             }
             window.location.hash = searchParams.toString();
         });
@@ -23,8 +23,8 @@ export class Paging extends Component {
             let queryString = window.location.hash.slice(1);
             let searchParams = new URLSearchParams(queryString);
             let currentPageNumber = parseInt(searchParams.get('page'));
-            if (currentPageNumber === 1){return;}
-            searchParams.set('page', currentPageNumber - 1);
+            if (!currentPageNumber || parseInt(currentPageNumber) === 1){return;}
+            searchParams.set('page', parseInt(currentPageNumber) - 1);
             window.location.hash = searchParams.toString();
         });
         
